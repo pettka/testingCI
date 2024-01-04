@@ -21,7 +21,7 @@ on:
 
 env:
   REGISTRY: docker.io
-  IMAGE_NAME: pettka/weewx-test
+  IMAGE_NAME: pettka/test
 
 permissions:
   actions: read
@@ -73,7 +73,7 @@ jobs:
         with:
           file: ./Dockerfile
           context: .
-          push: false
+          push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           
